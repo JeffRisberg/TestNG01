@@ -1,32 +1,30 @@
 package com.company;
 
-/*
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.*;
+import static org.testng.Assert.assertEquals;
 
 import com.company.models.Item;
 import com.company.services.ItemService;
 import com.company.stores.ItemStore;
 import java.util.ArrayList;
 import java.util.List;
-import org.junit.Before;
-import org.junit.Test;
-import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
-@RunWith(MockitoJUnitRunner.class)
 public class ItemServiceTestWithAnnotations {
 
   @Mock private ItemStore itemStore;
 
   @InjectMocks private ItemService itemService;
 
-  @Before
+  @BeforeMethod
   public void setUp() throws Exception {
+    MockitoAnnotations.initMocks(this);
+
     Item mockedItem1 = new Item(1L, "Item 1", "Item 1 Desc", 2000);
     Item mockedItem2 = new Item(2L, "Item 2", "Item 2 Desc", 4000);
     List<Item> mockedItems = new ArrayList<>();
@@ -49,35 +47,34 @@ public class ItemServiceTestWithAnnotations {
     // Verify
     //
     verify(itemStore, times(1)).findById(1L);
-    assertThat(result.getName(), is("Item 1"));
+    assertEquals(result.getName(), "Item 1");
   }
 
   @Test
   public void getItemNameUpperCase() {
     //
-    // When
+    // Test
     //
     String result = itemService.getItemNameUpperCase(1L);
 
     //
-    // Verify
+    // Assert
     //
     verify(itemStore, times(1)).findById(1L);
-    assertThat(result, is("ITEM 1"));
+    assertEquals(result, "ITEM 1");
   }
 
   @Test
   public void getAveragePrice() {
     //
-    // When
+    // Test
     //
     int result = itemService.getAveragePrice();
 
     //
-    // Verify
+    // Assert
     //
     verify(itemStore, times(1)).readAllItems();
     assertEquals(3000, result);
   }
 }
-*/

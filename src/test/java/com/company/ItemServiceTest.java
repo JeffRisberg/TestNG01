@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import static org.mockito.Mockito.*;
@@ -18,7 +20,7 @@ public class ItemServiceTest {
   private ItemStore itemStore;
   private ItemService itemService;
 
-  @BeforeClass
+  @BeforeMethod
   public void setUp() throws Exception {
     itemStore = mock(ItemStore.class);
 
@@ -37,7 +39,6 @@ public class ItemServiceTest {
     when(itemStore.readAllItems()).thenReturn(mockedItems);
 
     itemService = new ItemService(itemStore);
-    log.info("Set up Store and Service");
   }
 
   @Test
@@ -66,7 +67,6 @@ public class ItemServiceTest {
     //
     verify(itemStore, times(1)).findById(1L);
     assertEquals(result, "ITEM 1");
-
   }
 
   @Test

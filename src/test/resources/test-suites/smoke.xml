@@ -3,35 +3,19 @@
 <suite name="Smoke Test Suite" parallel="true">
     <test name="Repo Smoke Tests">
         <classes>
-            <class name="com.features.demo.FeatureATest">
-                <methods>
-                    <include name="testA1"/>
-                </methods>
+            <class name="com.company.demo.FeatureATest">
             </class>
-            <class name="com.features.demo.FeatureBTest">
-                <methods>
-                    <include name="testB1"/>
-                </methods>
+            <class name="com.company.demo.FeatureBTest">
             </class>
         </classes>
     </test>
     <test name="Smoke Tests">
         <classes>
-            <class name="com.features.demo.FeatureCTest">
-                <methods>
-                    <exclude name="testC2"/>
-                    <exclude name="testC3"/>
-                </methods>
+            <class name="com.company.demo.FeatureCTest">
             </class>
-            <class name="com.features.demo2.FeatureDTest">
-                <methods>
-                    <include name="testD1"/>
-                </methods>
+            <class name="com.company.demo2.FeatureDTest">
             </class>
-            <class name="com.features.demo3.FeatureGTest">
-                <methods>
-                    <include name="testG1"/>
-                </methods>
+            <class name="com.company.demo3.FeatureGTest">
             </class>
         </classes>
     </test>

@@ -2,7 +2,7 @@
 <suite name="Tests" parallel="true">
     <test name="Tests">
         <packages>
-            <package name="com.features.*" />
+            <package name="com.company.*" />
         </packages>
     </test>
 </suite>
