@@ -10,3 +10,5 @@ target/
 test-output
 test-results
 gradle/*.jar
+.idea/workspace.xml
+.idea/tasks.xml
