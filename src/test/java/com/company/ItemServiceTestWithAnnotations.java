@@ -8,6 +8,8 @@ import com.company.services.ItemService;
 import com.company.stores.ItemStore;
 import java.util.ArrayList;
 import java.util.List;
+
+import lombok.extern.slf4j.Slf4j;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
@@ -15,6 +17,7 @@ import org.mockito.junit.MockitoJUnitRunner;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
+@Slf4j
 public class ItemServiceTestWithAnnotations {
 
   @Mock private ItemStore itemStore;
@@ -34,6 +37,7 @@ public class ItemServiceTestWithAnnotations {
     when(itemStore.readAllItems()).thenReturn(mockedItems);
 
     when(itemStore.findById(1L)).thenReturn(mockedItem1);
+    log.info("setUp");
   }
 
   @Test
